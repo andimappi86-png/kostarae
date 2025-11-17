@@ -15,40 +15,44 @@
             <h2>Daftar Pencari Kost</h2>
             <p class="sub-text">Temukan kost sesuai kebutuhanmu ✨</p>
 
-            <form>
+            <form action="{{ route('register.proses') }}" method="POST">
+                
+                @csrf 
+
+                <input type="hidden" name="role" value="pencari">
 
                 <div class="form-group">
                     <label>Nama Lengkap</label>
-                    <input type="text" class="form-input" placeholder="John Kevin">
+                    <input type="text" name="name" class="form-input" placeholder="John Kevin" required>
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-input" placeholder="nama@email.com">
+                    <input type="email" name="email" class="form-input" placeholder="nama@email.com" required>
                 </div>
 
                 <div class="form-group">
                     <label>No WhatsApp</label>
-                    <input type="text" class="form-input" placeholder="08xxxx">
+                    <input type="text" name="phone" class="form-input" placeholder="08xxxx" required>
                 </div>
 
                 <div class="form-group">
                     <label>Jenis Kelamin</label>
-                    <select class="form-input">
-                        <option>Laki-laki</option>
-                        <option>Perempuan</option>
+                    <select name="gender" class="form-input" required>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-input" placeholder="........">
+                    <input type="password" name="password" class="form-input" placeholder="........" required>
                 </div>
 
-                <button class="btn-submit">Daftar</button>
+                <button type="submit" class="btn-submit">Daftar</button>
 
                 <div class="bottom-text">
-                    Sudah punya akun? <a href="#">Masuk</a>
+                    Sudah punya akun? <a href="{{ url('/login') }}">Masuk</a>
                 </div>
 
             </form>
