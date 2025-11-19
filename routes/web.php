@@ -17,3 +17,4 @@ Route::post('/register-proses', [AuthController::class, 'register'])->name('regi
 Route::get('/register-pencari', [AuthController::class, 'showRegisterUser'])->name('register.user');
 Route::get('/register-pemilik', [AuthController::class, 'showRegisterOwner'])->name('register.owner');
 Route::post('/register-proses', [AuthController::class, 'register'])->name('register.proses');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

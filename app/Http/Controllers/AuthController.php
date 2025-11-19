@@ -45,6 +45,11 @@ class AuthController extends Controller
             'gender' => $request->gender,
         ]);
 
-        return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
+        return redirect('/')->with('success', 'Registrasi berhasil! Selamat datang.');
+    }
+    public function showLoginForm()
+    {
+        return view('auth.login'); // Pastikan Anda punya file login.blade.php di folder views/auth
     }
 }
+
